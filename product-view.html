@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product View</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+
+        <a class="navbar-brand" href="index.html">Aqua Store</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="category.html">Category</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="search mr-3">
+                <a href="search.html" class="btn btn-sm btn-outline-primary">
+                    Search
+                </a>
+            </div>
+
+            <div class="cart">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart fa-1x text-dark"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Product Section -->
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <div class="col-md-6 text-center">
+                <img id="productImage" class="img-fluid">
+            </div>
+
+            <div class="col-md-6">
+                <h2 id="productTitle"></h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <h4 class="text-success" id="productPrice"></h4>
+
+                <p id="productRating"></p>
+
+                <button class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <h3 class="mt-4">Related Products</h3>
+
+        <div class="row mt-3">
+
+            <div class="col-md-3">
+                <div class="card p-3 text-center">
+                    Product X
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card p-3 text-center">
+                    Product Y
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card p-3 text-center">
+                    Product Z
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Aqua Store | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+
+<script>
+
+    const products = {
+        1: {
+            title: "Aquarium Filter",
+            price: "₹400",
+            image: "img/product-1.jpg",
+            rating: "⭐⭐⭐⭐☆"
+        },
+        2: {
+            title: "Aquarium Plants",
+            price: "₹350",
+            image: "img/Aquariumplants.webp",
+            rating: "⭐⭐⭐☆☆"
+        },
+        3: {
+            title: "Fish Food",
+            price: "₹200",
+            image: "img/fishfood.jpg",
+            rating: "⭐⭐⭐⭐⭐"
+        }
+    };
+    const url = new URLSearchParams(window.location.search);
+    const productId = url.get("product");
+
+    const product = products[productId];
+
+    if (product) {
+        document.getElementById("productTitle").innerText = product.title;
+        document.getElementById("productPrice").innerText = product.price;
+        document.getElementById("productImage").src = product.image;
+        document.getElementById("productRating").innerText = "Rating: " + product.rating;
+    }
+
+    const addBtn = document.getElementById("addToCartBtn");
+
+    addBtn.addEventListener("click", function () {
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart.push(product);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Product added to cart!");
+
+    });
+
+</script>
+
+</html>
+
+
+</body>
+
+
+
+</html>
