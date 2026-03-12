@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow ">
+
+        <a class="navbar-brand" href="index.html">Aqua Store</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="category.html">Category</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="search mr-3">
+                <a href="search.html" class="btn btn-sm btn-outline-primary">
+                    Search
+                </a>
+            </div>
+
+            <div class="cart">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart fa-1x text-dark"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="container mt-5">
+
+        <h1 class="text-center mb-4">Checkout</h1>
+
+        <div class="row">
+
+            <!-- Order Summary -->
+            <div class="col-md-6">
+
+                <h4>Order Summary</h4>
+
+                <div class="card p-3">
+
+                    <p>Aquarium Filter - ₹1500</p>
+
+                    <hr>
+
+                    <h5>Total: ₹1500</h5>
+
+                </div>
+
+            </div>
+
+            <!-- Shipping Form -->
+            <div class="col-md-6">
+
+                <h4>Shipping Information</h4>
+
+                <form action="confirmation.html">
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Address" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="City" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Phone Number" required>
+                    </div>
+
+                    <button class="btn btn-success">Place Order</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Aqua Store | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
